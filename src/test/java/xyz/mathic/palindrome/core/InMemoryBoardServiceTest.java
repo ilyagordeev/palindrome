@@ -20,11 +20,20 @@ public class InMemoryBoardServiceTest {
         assertTrue(boardService.putPhrase("Mladich", "а роза упала на лапу Азора"));
 
         assertTrue(boardService.putPhrase("Korsich", "topottopot"));
+
+        assertTrue(boardService.putPhrase("Σωκράτης", "Saippuakivikauppias"));
+
+        assertTrue(boardService.putPhrase("Брюсов", "топот"));
+
+        assertTrue(boardService.putPhrase("Краб", "010"));
     }
 
     @Test
     public void getLeaders() {
-        assertArrayEquals(new Object[]{"Mladich", "Ivan", "Korsich"}, boardService.getLeaders().stream().map(User::getName).toArray());
-        assertArrayEquals(new Object[]{31, 26, 10}, boardService.getLeaders().stream().map(User::getPoints).toArray());
+        assertArrayEquals(new Object[]{"Mladich", "Ivan", "Σωκράτης", "Korsich", "Брюсов"},
+                boardService.getLeaders().stream().map(User::getName).toArray());
+
+        assertArrayEquals(new Object[]{31, 26, 19, 10, 5},
+                boardService.getLeaders().stream().map(User::getPoints).toArray());
    }
 }
