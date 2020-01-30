@@ -41,6 +41,7 @@ public interface BoardService {
      * @return строка без пробелов
      */
     static String normalizePalindrome(final String palindrome) {
+        if (palindrome == null || palindrome.isBlank()) return "";
         return palindrome.replaceAll("(?U)[\\pP\\s]", "").toLowerCase();
     }
 }

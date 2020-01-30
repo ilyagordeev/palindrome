@@ -21,5 +21,6 @@ public class BoardServiceTest {
         assertFalse(BoardService.isPalindrome(BoardService.normalizePalindrome("")));
         assertFalse(BoardService.isPalindrome(BoardService.normalizePalindrome("  ")));
         assertFalse(BoardService.isPalindrome(BoardService.normalizePalindrome("A")));
+        assertFalse(BoardService.isPalindrome(BoardService.normalizePalindrome(null)));
     }
 }

@@ -26,6 +26,11 @@ public class InMemoryBoardServiceTest {
         assertTrue(boardService.putPhrase("Брюсов", "топот"));
 
         assertTrue(boardService.putPhrase("Краб", "010"));
+
+        assertFalse(boardService.putPhrase("", "010"));
+        assertFalse(boardService.putPhrase("   ", "010"));
+        assertFalse(boardService.putPhrase("123", null));
+        assertFalse(boardService.putPhrase(null, null));
     }
 
     @Test

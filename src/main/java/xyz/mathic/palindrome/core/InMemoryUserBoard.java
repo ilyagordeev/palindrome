@@ -29,6 +29,7 @@ public class InMemoryUserBoard implements BoardService {
 
     @Override
     public boolean putPhrase(String username, String phrase) {
+        if (username == null || username.isBlank()) return false;
         var user = getUser(username);
         String norm = BoardService.normalizePalindrome(phrase);
         if (BoardService.isPalindrome(norm)) {
